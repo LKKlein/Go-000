@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option go_package = ".;api";
+
+service Comment {
+  rpc WriteComment (CommentRequest) returns (CommentReply);
+}
+
+message CommentRequest {
+  int64 id = 1;
+  string content = 2;
+}
+
+message CommentReply {
+  int64 id = 1;
+}
